@@ -10,8 +10,9 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
     .directive('appNav', downgradeComponent({
       component: NavComponent
     }));
+    debugger;
 
   const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
   upgrade.bootstrap(document.documentElement, ['app']);
-  console.log('hybrid app bootstrapped');
+  console.log('hybrid ng1 ng2 app - bootstrap done');
 });

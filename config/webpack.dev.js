@@ -8,6 +8,8 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+    mode: "development",
+    
     // List the separate dependency graphs
     entry: {
         'polyfills': './app/polyfills.ts',
@@ -31,7 +33,7 @@ module.exports = {
                 test: /\.ts$/,
                 loaders: [
                     /* ts->js */
-                    'awesome-typescript-loader',
+                    'ts-loader',
                     /* translate template url to require statements, inline the templates - works for both ng1 & ng2 */
                     'angular2-template-loader' 
                 ]
@@ -42,23 +44,14 @@ module.exports = {
                 loader: 'html-loader'
             },
             {
+                /* Load css*/
                 test:/\.css$/,
                 use:['style-loader','css-loader']
             }
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            // All the webpack stuf is bundled in common
-            name: 'common',
-            minChunks: Infinity
-        }),
 
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            chunks: ['vendor', 'app'],
-            minChunks: 2
-        }),
         //So we can debug in browser
         new webpack.SourceMapDevToolPlugin({
             "filename": "[file].map[query]",
