@@ -75,9 +75,10 @@ module.exports = {
           helpers.root('./src'),
           {}
         ),
-
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'static'
-        })
+        
+        // Comment out the following plugin to see bundle report
+        // new BundleAnalyzerPlugin({
+        //   analyzerMode: 'static'
+        // })
     ]
 }
