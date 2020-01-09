@@ -1,0 +1,9 @@
+logs/*
+!.gitkeep
+node_modules/
+dist/
+app/lib/
+tmp
+.DS_Store
+.idea
+package-lock.json

@@ -1,0 +1,50 @@
+{
+    "name": "ng1-2-ng2",
+    "private": true,
+    "version": "0.0.0",
+    "description": "AngularJS to angular migration",
+    "repository": "https://github.com/angular/angular-seed",
+    "license": "MIT",
+    "main": "index.js",
+    "dependencies": {
+        "@angular/common": "4.3.0",
+        "@angular/compiler": "4.3.0",
+        "@angular/core": "4.3.0",
+        "@angular/forms": "4.3.0",
+        "@angular/platform-browser": "4.3.0",
+        "@angular/platform-browser-dynamic": "4.3.0",
+        "@angular/router": "4.3.0",
+        "@angular/upgrade": "4.3.0",
+        "angular": "1.5.0",
+        "angular-route": "1.5.0",
+        "core-js": "2.4.1",
+        "rxjs": "5.0.1",
+        "zone.js": "0.8.14"
+    },
+    "devDependencies": {
+        "@angular/compiler-cli": "8.2.14",
+        "@ngtools/webpack": "1.5.5",
+        "@types/angular": "1.6.57",
+        "@types/core-js": "0.9.42",
+        "@types/node": "6.0.45",
+        "angular2-template-loader": "0.6.2",
+        "awesome-typescript-loader": "3.0.8",
+        "cpx": "1.5.0",
+        "css-loader": "^3.4.1",
+        "html-loader": "0.4.5",
+        "html-webpack-plugin": "2.28.0",
+        "null-loader": "0.1.1",
+        "raw-loader": "0.5.1",
+        "rimraf": "2.5.4",
+        "style-loader": "^1.1.2",
+        "typescript": "2.3.4",
+        "webpack": "3.3.0",
+        "webpack-bundle-analyzer": "2.8.3"
+    },
+    "scripts": {
+        "build": "npm run clean-dev && npm run copy-libs && webpack --config config/webpack.dev.js --watch --profile --progress",
+        "start": "http-server -a localhost -p 8000 -c-1 dist/dev",
+        "copy-libs": "cpx \"node_modules/{angular,angular-*,html5-boilerplate/dist}/**/*\" dist/dev/lib -C",
+        "clean-dev": "rimraf dist/dev/*"
+    }
+}

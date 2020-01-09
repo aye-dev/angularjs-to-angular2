@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <ng2-app></ng2-app>
+
+  <!-- Same as app/index.html except scripts are cleaned up, markup (menu and ng-view) moved to AppComponent
+     Leave the vendor libraries, we don't bundle them -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+
+  <script type="text/javascript" src="/common.bundle.js"></script>
+  <script type="text/javascript" src="/vendor.bundle.js"></script>
+  <script type="text/javascript" src="/polyfills.bundle.js"></script>
+  <script type="text/javascript" src="/ng1.bundle.js"></script>
+
+</body>
+
+</html>
