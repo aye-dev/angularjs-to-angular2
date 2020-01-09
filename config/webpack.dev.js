@@ -13,7 +13,6 @@ module.exports = {
     // List the separate dependency graphs
     entry: {
         'polyfills': './app/polyfills.ts',
-        'vendor': './app/vendor.ts',
         'ng1': './app/index.ts', // Old AngularJs 1.x
         'app': './app/main.ts' // New Angular 2+
     },
@@ -51,7 +50,6 @@ module.exports = {
         ]
     },
     plugins: [
-
         //So we can debug in browser
         new webpack.SourceMapDevToolPlugin({
             "filename": "[file].map[query]",
@@ -78,8 +76,8 @@ module.exports = {
           {}
         ),
 
-        // new BundleAnalyzerPlugin({
-        //   analyzerMode: 'static'
-        // })
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static'
+        })
     ]
 }
